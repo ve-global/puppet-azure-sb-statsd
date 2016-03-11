@@ -1,0 +1,20 @@
+# azure-sb-statsd - Report azure-sb metrics to statsd
+#
+# This is a daemon that polls one or more servicebus endpoints and
+# sends the metrics to statsd
+#
+description "Report servicebus metrics to statsd"
+author      "Andy Royle"
+
+start on (local-filesystems and net-device-up IFACE!=lo)
+
+respawn
+respawn limit 10 5
+
+setuid nobody
+setgid nogroup
+
+script
+    . /etc/default/azure-sb-statsd
+    exec $NODEJS $AZUREJS $AZURE_CONFIG_DIR >> $AZURE_LOGFILE
+end script

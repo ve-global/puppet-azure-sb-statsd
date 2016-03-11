@@ -1,0 +1,18 @@
+[
+  <% @servers.each_with_index do |server, i| -%>
+    {
+      "endpoint": "<%= server['endpoint'] %>",
+      "key": "<%= server['key'] %>",
+      "keyname": "<%= server['keyname'] %>",
+      "queues": <%= server['queues'] %>,
+      "topics": <%= server['topics'] %>,
+      <% if server['tags'] -%>
+      "tags": <%= server['tags'].to_json %>,
+      <% end -%>
+      "prefix": "<%= server['prefix'] || '' %>"
+    }
+    <% if @servers.length > 1 && i != (@servers.length - 1) -%>
+      ,
+    <% end -%>
+  <% end -%>
+]

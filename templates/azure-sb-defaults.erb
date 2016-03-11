@@ -1,0 +1,11 @@
+# HEADER: This file is being managed by Puppet. Any manual changes to this file
+# will be overwritten.
+
+<% @environment.each do |val| -%>
+<%= val %>
+<% end -%>
+NODEJS="<%= @nodejs_bin %>"
+AZUREJS="<%= @azurejs %>"
+AZURE_CONFIG_DIR="<%= @configdir %>"
+AZURE_LOGFILE="<%= @logfile %>"
+DAEMON_ARGS="$AZUREJS $AZURE_CONFIG_DIR $AZURE_LOGFILE"
