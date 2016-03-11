@@ -22,8 +22,8 @@ This module assumes nodejs & npm is installed on the host, but will not do it fo
           endpoint => 'http://my.servicebus.instance.com',
           key      => 'accesskey',
           keyname  => 'RootManageSharedAccessKey',
-          queues   => true,
-          topics   => true,
+          queues   => true,                 # log stats for queues
+          topics   => true,                 # log stats for topics (and subscriptions)
           tags     => {                     # tags are only supported by influxdb backend
             foo => 'bar'
           },
