@@ -6,6 +6,7 @@
       "keyname": "<%= server['keyname'] %>",
       "queues": <%= server['queues'] %>,
       "topics": <%= server['topics'] %>,
+      "ignoredsubscriptions": <%= server['ignoredsubscriptions'] %>,
       <% if server['tags'] -%>
       "tags": <%= server['tags'].to_json %>,
       <% end -%>
