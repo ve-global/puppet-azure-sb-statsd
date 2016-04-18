@@ -1,6 +1,6 @@
 {
   "name": "andyroyle-azure_sb_statsd",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "source": "https://github.com/andyroyle/puppet-azure-sb-statsd",
   "author": "Andy Royle",
   "license": "Apache-2.0",
